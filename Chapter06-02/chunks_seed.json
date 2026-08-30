@@ -1,0 +1,128 @@
+[
+  {
+    "chunk_id": "a102-weight",
+    "doc_id": "products-v1",
+    "sku": "A102",
+    "status": "active",
+    "source": "products.csv",
+    "section": "承重",
+    "content": "A102 云朵椅静态承重上限为 120 千克，请勿站立使用"
+  },
+  {
+    "chunk_id": "a102-color",
+    "doc_id": "products-v1",
+    "sku": "A102",
+    "status": "active",
+    "source": "products.csv",
+    "section": "外观",
+    "content": "A102 云朵椅采用弧形靠背，提供米白色和灰色"
+  },
+  {
+    "chunk_id": "b205-weight",
+    "doc_id": "products-v1",
+    "sku": "B205",
+    "status": "active",
+    "source": "products.csv",
+    "section": "承重",
+    "content": "B205 实木椅静态承重上限为 150 千克"
+  },
+  {
+    "chunk_id": "b205-size",
+    "doc_id": "products-v1",
+    "sku": "B205",
+    "status": "active",
+    "source": "products.csv",
+    "section": "尺寸",
+    "content": "B205 黑色款宽 110 厘米、深 60 厘米"
+  },
+  {
+    "chunk_id": "return-v1",
+    "doc_id": "returns-v1",
+    "sku": null,
+    "status": "inactive",
+    "source": "returns_v1.md",
+    "section": "退货期限",
+    "content": "旧规则：退货期限为签收后 15 天"
+  },
+  {
+    "chunk_id": "return-v2",
+    "doc_id": "returns-v2",
+    "sku": null,
+    "status": "active",
+    "source": "returns_v2.md",
+    "section": "退货期限",
+    "content": "当前规则：退货期限为签收后 7 天"
+  },
+  {
+    "chunk_id": "a102-clean",
+    "doc_id": "products-v1",
+    "sku": "A102",
+    "status": "active",
+    "source": "products.csv",
+    "section": "清洁",
+    "content": "A102 云朵椅日常清洁：用微湿软布擦拭表面，避免强力去污剂；布艺部分可用中性清洁剂局部轻擦，晾干后再使用。"
+  },
+  {
+    "chunk_id": "a102-size",
+    "doc_id": "products-v1",
+    "sku": "A102",
+    "status": "active",
+    "source": "products.csv",
+    "section": "尺寸",
+    "content": "A102 云朵椅宽 78 厘米、深 72 厘米、高 82 厘米，座面高 44 厘米"
+  },
+  {
+    "chunk_id": "b205-color",
+    "doc_id": "products-v1",
+    "sku": "B205",
+    "status": "active",
+    "source": "products.csv",
+    "section": "外观",
+    "content": "B205 实木椅提供黑色款与原木色款；黑色款适合现代办公场景"
+  },
+  {
+    "chunk_id": "returns-standard",
+    "doc_id": "returns-v2",
+    "sku": null,
+    "status": "active",
+    "source": "returns_v2.md",
+    "section": "普通商品退货",
+    "content": "适用对象：普通成品。条件：签收后 7 天内、未拆封、配件齐全、不影响二次销售。结论：可以申请无理由退货。例外：定制商品、已安装商品、特价清仓商品另按例外规则处理。"
+  },
+  {
+    "chunk_id": "returns-custom",
+    "doc_id": "returns-v2",
+    "sku": null,
+    "status": "active",
+    "source": "returns_v2.md",
+    "section": "例外规则·定制商品",
+    "content": "适用对象：定制商品（含定制颜色）。条件：非质量问题。结论：不支持无理由退货。审核：质量问题或其他例外进入人工工单。"
+  },
+  {
+    "chunk_id": "returns-refund",
+    "doc_id": "returns-v2",
+    "sku": null,
+    "status": "active",
+    "source": "returns_v2.md",
+    "section": "退款到账时效",
+    "content": "仓库验收通过后按原支付方式退款：原路退回 1～3 个工作日；对公转账 5 个工作日内；礼品卡即时退回余额。"
+  },
+  {
+    "chunk_id": "manual-e203-check",
+    "doc_id": "manual-ct200",
+    "sku": "CT-200",
+    "status": "active",
+    "source": "恒温设备维护手册.pdf",
+    "section": "2. 高温报警 E-203",
+    "content": "当腔体温度连续 3 分钟高于 85 ℃时触发 E-203，并自动停止加热。报警后先断开加热，检查排风通道、风机转速（≥1800 rpm）和过滤网，不要立即强制重启。"
+  },
+  {
+    "chunk_id": "manual-e203-reset",
+    "doc_id": "manual-ct200",
+    "sku": "CT-200",
+    "status": "active",
+    "source": "恒温设备维护手册.pdf",
+    "section": "3. 复位条件",
+    "content": "只有在腔体温度降至 60 ℃以下，并且风机转速恢复到 1800 rpm 以上后，才可按下复位键。若 10 分钟内再次出现 E-203，应停止使用并联系维修，不得连续复位。"
+  }
+]

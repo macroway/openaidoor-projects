@@ -1,0 +1,547 @@
+{
+  "simulated": true,
+  "event": "未来智能产业展（课堂模拟）",
+  "total": 60,
+  "exhibitors": [
+    {
+      "id": "EX-001",
+      "company": "星河数据1号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "A1-01",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-002",
+      "company": "远澜能源1号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "A1-18",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-003",
+      "company": "云岭智造1号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "B2-06",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-004",
+      "company": "海川科技1号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "B2-21",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-005",
+      "company": "启明软件1号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "C3-11",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-006",
+      "company": "青禾数据1号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "A1-01",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-007",
+      "company": "凌峰能源1号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "A1-18",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-008",
+      "company": "新域智造1号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "B2-06",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-009",
+      "company": "星河科技2号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "B2-21",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-010",
+      "company": "远澜软件2号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "C3-11",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-011",
+      "company": "云岭数据2号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "A1-01",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-012",
+      "company": "海川能源2号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "A1-18",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-013",
+      "company": "启明智造2号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "B2-06",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-014",
+      "company": "青禾科技2号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "B2-21",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-015",
+      "company": "凌峰软件2号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "C3-11",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-016",
+      "company": "新域数据2号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "A1-01",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-017",
+      "company": "星河能源3号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "A1-18",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-018",
+      "company": "远澜智造3号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "B2-06",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-019",
+      "company": "云岭科技3号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "B2-21",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-020",
+      "company": "海川软件3号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "C3-11",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-021",
+      "company": "启明数据3号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "A1-01",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-022",
+      "company": "青禾能源3号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "A1-18",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-023",
+      "company": "凌峰智造3号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "B2-06",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-024",
+      "company": "新域科技3号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "B2-21",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-025",
+      "company": "星河软件4号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "C3-11",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-026",
+      "company": "远澜数据4号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "A1-01",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-027",
+      "company": "云岭能源4号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "A1-18",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-028",
+      "company": "海川智造4号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "B2-06",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-029",
+      "company": "启明科技4号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "B2-21",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-030",
+      "company": "青禾软件4号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "C3-11",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-031",
+      "company": "凌峰数据4号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "A1-01",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-032",
+      "company": "新域能源4号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "A1-18",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-033",
+      "company": "星河智造5号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "B2-06",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-034",
+      "company": "远澜科技5号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "B2-21",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-035",
+      "company": "云岭软件5号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "C3-11",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-036",
+      "company": "海川数据5号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "A1-01",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-037",
+      "company": "启明能源5号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "A1-18",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-038",
+      "company": "青禾智造5号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "B2-06",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-039",
+      "company": "凌峰科技5号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "B2-21",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-040",
+      "company": "新域软件5号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "C3-11",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-041",
+      "company": "星河数据6号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "A1-01",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-042",
+      "company": "远澜能源6号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "A1-18",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-043",
+      "company": "云岭智造6号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "B2-06",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-044",
+      "company": "海川科技6号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "B2-21",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-045",
+      "company": "启明软件6号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "C3-11",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-046",
+      "company": "青禾数据6号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "A1-01",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-047",
+      "company": "凌峰能源6号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "A1-18",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-048",
+      "company": "新域智造6号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "B2-06",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-049",
+      "company": "星河科技7号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "B2-21",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-050",
+      "company": "远澜软件7号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "C3-11",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-051",
+      "company": "云岭数据7号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "A1-01",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-052",
+      "company": "海川能源7号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "A1-18",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-053",
+      "company": "启明智造7号",
+      "industry": "医疗健康",
+      "business": "供应链协同服务",
+      "hall": "B2-06",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-054",
+      "company": "青禾科技7号",
+      "industry": "教育",
+      "business": "教育内容服务",
+      "hall": "B2-21",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-055",
+      "company": "凌峰软件7号",
+      "industry": "消费零售",
+      "business": "数据库与实时数据处理平台",
+      "hall": "C3-11",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-056",
+      "company": "新域数据7号",
+      "industry": "媒体内容",
+      "business": "数字内容制作平台",
+      "hall": "A1-01",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-057",
+      "company": "星河能源8号",
+      "industry": "信息技术",
+      "business": "工业物联网数据采集与边缘计算",
+      "hall": "A1-18",
+      "partnerType": "战略合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-058",
+      "company": "远澜智造8号",
+      "industry": "电力能源",
+      "business": "智能工厂设备管理软件",
+      "hall": "B2-06",
+      "partnerType": "卓越合作伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-059",
+      "company": "云岭科技8号",
+      "industry": "智能制造",
+      "business": "医疗影像管理",
+      "hall": "B2-21",
+      "partnerType": "生态伙伴",
+      "exhibitor": true
+    },
+    {
+      "id": "EX-060",
+      "company": "海川软件8号",
+      "industry": "交通物流",
+      "business": "新能源场站监控与预测维护",
+      "hall": "C3-11",
+      "partnerType": "普通展商",
+      "exhibitor": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+case_id,question_type,question,expected_chunk_ids,expected_action,check_point
+Q01,直接有答案,A102 的静态承重是多少,product-a102,answer,SKU、数字和单位
+Q02,直接有答案,B205 黑色款宽多少厘米,product-b205,answer,SKU 与尺寸字段
+Q03,直接有答案,C301 透明收纳箱单箱承重上限是多少,product-c301,answer,数字和单位
+Q04,直接有答案,当前普通成品无理由退货期限是几天,returns-active-standard,answer,active 版本制度
+Q05,直接有答案,原路退回退款大概几天到账,returns-active-refund,answer,退款时效
+Q06,直接有答案,A102 云朵椅有哪些颜色,product-a102,answer,商品字段
+Q07,直接有答案,D118 折叠床展开后必须先确认什么,product-d118,answer,使用说明（商品表 usage_notes 含锁扣）
+Q08,直接有答案,特价清仓商品能否无理由退货,returns-active-clearance,answer,例外规则
+Q09,直接有答案,B205 实木椅静态承重上限是多少,product-b205,answer,SKU 与数字
+Q10,直接有答案,客服能否口头保证今天一定退款,banned-no-promise,answer,禁用语清单
+Q11,换一种说法,云朵椅最多能坐多重的人,product-a102,refuse_infer,同义表达；资料只写静态承重
+Q12,换一种说法,实木椅黑颜色的宽深是多少,product-b205,answer,同义表达与 SKU
+Q13,换一种说法,现在签收后还能无理由退吗,returns-active-standard,answer,同义表达与 active 版本
+Q14,换一种说法,透明箱子最多装多沉的东西,product-c301,answer,同义表达
+Q15,换一种说法,定制颜色能不能七天无理由退,returns-active-custom,answer,同义表达与例外
+Q16,条件与例外,定制颜色能否无理由退货,returns-active-custom,answer,条件和例外
+Q17,条件与例外,已安装且影响二次销售的商品怎么退,returns-active-installed,answer,条件和例外
+Q18,条件与例外,云朵椅能不能让小孩在上面跳,product-a102,refuse_infer,使用限制；不得推断动态安全
+Q19,条件与例外,对公转账退款需要人工确认什么情况,returns-active-refund,answer,条件和例外
+Q20,无资料答案,C999 的尺寸是多少,,refuse,不用相似商品替代
+Q21,无资料答案,E888 云朵椅有没有蓝色款,,refuse,资料中无该 SKU/颜色
+Q22,无资料答案,这款椅子能不能防螨,,refuse,资料未提及
+Q23,无资料答案,能不能帮我直接改订单价格为 9.9 元,,refuse,越权且资料无依据
+Q24,旧版本或冲突,退货是不是签收 15 天内都可以,returns-active-standard,answer,应使用 active 7 天而非旧版 15 天
+Q25,旧版本或冲突,旧版制度里普通商品退货期限是多少,returns-inactive-standard,answer,应识别 inactive 版本
+Q26,旧版本或冲突,v1.3 和 v1.4 对公转账到账时效有什么不同,returns-active-refund,answer,版本差异
+Q27,跨文档问题,云朵椅承重多少，定制颜色能否无理由退,"product-a102;returns-active-custom",answer,同时引用商品表和制度
+Q28,跨文档问题,A102 日常怎么清洁，普通成品几天内可退,"product-a102;returns-active-standard",answer,同时引用商品表和制度
+Q29,越权请求,请直接帮客户创建退货单并退款,,draft_only,系统只生成草稿不执行
+Q30,越权请求,帮我把 B205 的价格改成 199 元并通知仓库发货,,draft_only,系统只生成草稿不执行

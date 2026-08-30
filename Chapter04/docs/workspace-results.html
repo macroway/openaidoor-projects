@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>询价整理助手 - 整理结果</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #F8FAFB;
+    color: #1A1A2E;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Nav */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    background: #fff;
+    border-bottom: 1px solid #E5E7EB;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A1A2E;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-logo-icon {
+    width: 26px;
+    height: 26px;
+    background: #2DD4A8;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .nav-link {
+    font-size: 14px;
+    color: #6B7280;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-link.active {
+    color: #1A1A2E;
+    font-weight: 600;
+  }
+  .nav-user {
+    width: 32px;
+    height: 32px;
+    background: #E5E7EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #6B7280;
+  }
+
+  /* Main */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  /* Header */
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .result-header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1A1A2E;
+    margin-bottom: 4px;
+  }
+  .result-header .meta {
+    font-size: 14px;
+    color: #6B7280;
+  }
+  .result-header .meta strong {
+    color: #2DD4A8;
+    font-weight: 700;
+  }
+  .header-actions {
+    display: flex;
+    gap: 10px;
+  }
+  .btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-primary {
+    background: #2DD4A8;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #25B892; }
+  .btn-outline {
+    background: #fff;
+    color: #6B7280;
+    border: 1px solid #E5E7EB;
+  }
+  .btn-outline:hover { border-color: #D1D5DB; }
+  .btn-danger {
+    background: #fff;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+  }
+  .btn-danger:hover { background: #FEF2F2; }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid #E5E7EB;
+  }
+  .tab {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B7280;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tab:hover {
+    color: #1A1A2E;
+  }
+  .tab.active {
+    color: #1A1A2E;
+    border-bottom-color: #2DD4A8;
+  }
+  .tab-badge {
+    background: #F3F4F6;
+    color: #6B7280;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .tab.active .tab-badge {
+    background: #F0FDF9;
+    color: #059669;
+  }
+  .tab-badge.warning {
+    background: #FEF3C7;
+    color: #D97706;
+  }
+
+  /* Tab Content */
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+
+  /* Table */
+  .table-wrapper {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+  .table-scroll {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead th {
+    background: #F9FAFB;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: #374151;
+    font-size: 13px;
+    border-bottom: 2px solid #E5E7EB;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+  }
+  tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #F3F4F6;
+    color: #4B5563;
+    vertical-align: top;
+  }
+  tbody tr:hover {
+    background: #F9FAFB;
+  }
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .cell-customer {
+    font-weight: 600;
+    color: #1A1A2E;
+    white-space: nowrap;
+  }
+  .cell-product {
+    font-weight: 600;
+    color: #1A1A2E;
+  }
+  .cell-quantity {
+    font-weight: 700;
+    color: #059669;
+    font-size: 15px;
+  }
+  .cell-urgent {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .urgent-normal {
+    background: #F3F4F6;
+    color: #6B7280;
+  }
+  .urgent-high {
+    background: #FEF3C7;
+    color: #D97706;
+  }
+  .urgent-critical {
+    background: #FEE2E2;
+    color: #DC2626;
+  }
+  .cell-missing {
+    color: #D97706;
+    font-size: 13px;
+  }
+  .cell-original {
+    font-size: 12px;
+    color: #9CA3AF;
+    font-style: italic;
+    max-width: 200px;
+  }
+
+  /* Editable cell */
+  td[contenteditable="true"] {
+    cursor: text;
+    transition: background 0.15s;
+  }
+  td[contenteditable="true"]:hover {
+    background: #F0FDF9;
+  }
+  td[contenteditable="true"]:focus {
+    outline: 2px solid #2DD4A8;
+    outline-offset: -2px;
+    background: #F0FDF9;
+  }
+
+  /* Confirmation Table */
+  .confirm-table td {
+    vertical-align: top;
+  }
+  .confirm-issue {
+    color: #DC2626;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .confirm-suggest {
+    color: #059669;
+    font-size: 13px;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: flex;
+    gap: 24px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6B7280;
+  }
+  .stat strong {
+    color: #1A1A2E;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .stat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .dot-green { background: #2DD4A8; }
+  .dot-yellow { background: #FBBF24; }
+  .dot-red { background: #EF4444; }
+
+  /* Row actions */
+  .row-actions {
+    display: flex;
+    gap: 4px;
+  }
+  .row-action-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    color: #D1D5DB;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .row-action-btn:hover {
+    background: #F3F4F6;
+    color: #6B7280;
+  }
+  .row-action-btn.delete:hover {
+    background: #FEE2E2;
+    color: #EF4444;
+  }
+
+  /* Empty state for tab 2 */
+  .empty-state {
+    text-align: center;
+    padding: 60px 24px;
+    color: #9CA3AF;
+  }
+  .empty-state .empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  .empty-state p {
+    font-size: 14px;
+  }
+
+  /* Footer toolbar */
+  .footer-toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid #E5E7EB;
+    padding: 14px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+  .footer-info {
+    font-size: 13px;
+    color: #6B7280;
+  }
+  .footer-info strong {
+    color: #1A1A2E;
+  }
+  .footer-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .nav { padding: 14px 20px; }
+    .main { padding: 20px 16px 100px; }
+    .result-header { flex-direction: column; gap: 16px; }
+    .stats-bar { flex-wrap: wrap; gap: 16px; }
+    .footer-toolbar { padding: 12px 20px; flex-direction: column; gap: 10px; }
+    .footer-actions { width: 100%; }
+    .footer-actions .btn { flex: 1; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">询</div>
+    询价整理助手
+  </div>
+  <div class="nav-links">
+    <a href="#" class="nav-link">工作台</a>
+    <a href="#" class="nav-link active">整理结果</a>
+    <a href="#" class="nav-link">历史记录</a>
+    <div class="nav-user">李</div>
+  </div>
+</nav>
+
+<!-- Main -->
+<main class="main">
+  <!-- Header -->
+  <div class="result-header">
+    <div>
+      <h1>整理结果</h1>
+      <div class="meta">2025年8月1日 · 6 张截图 · 识别到 <strong>4 个客户</strong> · <strong>5 条询价记录</strong></div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-outline">重新上传</button>
+      <button class="btn btn-outline">保存草稿</button>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-dot dot-green"></div>
+      <strong>5</strong> 条记录
+    </div>
+    <div class="stat">
+      <div class="stat-dot dot-yellow"></div>
+      <strong>3</strong> 项待确认
+    </div>
+    <div class="stat">
+      <div class="stat-dot dot-red"></div>
+      <strong>0</strong> 项异常
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="inquiry">
+      询价整理表
+      <span class="tab-badge">5</span>
+    </div>
+    <div class="tab" data-tab="confirm">
+      需要人工确认的问题
+      <span class="tab-badge warning">3</span>
+    </div>
+  </div>
+
+  <!-- Tab 1: Inquiry Table -->
+  <div class="tab-content active" id="tab-inquiry">
+    <div class="table-wrapper">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:40px"></th>
+              <th>客户名称</th>
+              <th>商品</th>
+              <th>规格</th>
+              <th>数量</th>
+              <th>期望价格</th>
+              <th>交期和到货地</th>
+              <th>紧急度</th>
+              <th>缺失信息</th>
+              <th>原文依据</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer" contenteditable="true">暖家生活馆陈老板</td>
+              <td class="cell-product" contenteditable="true">折叠脏衣篮</td>
+              <td contenteditable="true">45L，大号，带盖，米白色</td>
+              <td class="cell-quantity" contenteditable="true">100</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">第一批60个 8月18日前；第二批40个 8月22日前<br>苏州吴中仓</td>
+              <td><span class="cell-urgent urgent-normal">普通</span></td>
+              <td class="cell-missing">产品单价</td>
+              <td class="cell-original">"数量再改一下，最终要100个"</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer" contenteditable="true">好日子家居刘姐</td>
+              <td class="cell-product" contenteditable="true">珊瑚绒地垫</td>
+              <td contenteditable="true">40×60，灰色</td>
+              <td class="cell-quantity" contenteditable="true">180</td>
+              <td contenteditable="true">-</td>
+              <td contenteditable="true">周五上午必须送到<br>苏州仓</td>
+              <td><span class="cell-urgent urgent-high">较急</span></td>
+              <td class="cell-missing">产品单价</td>
+              <td class="cell-original">"刚才数量改成180张"</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer" contenteditable="true">安居百货周姐</td>
+              <td class="cell-product" contenteditable="true">透明收纳箱</td>
+              <td contenteditable="true">60L，蓝色，带轮款，大号</td>
+              <td class="cell-quantity" contenteditable="true">80</td>
+              <td contenteditable="true">含税到货价</td>
+              <td contenteditable="true">下周三前到杭州</td>
+              <td><span class="cell-urgent urgent-high">较急</span></td>
+              <td class="cell-missing">具体含税到货价</td>
+              <td class="cell-original">"含税到货价多少？下周三前能到杭州吗？"</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer" contenteditable="true">青禾社区团购</td>
+              <td class="cell-product" contenteditable="true">加厚垃圾袋</td>
+              <td contenteditable="true">45×50，黑色，每箱100卷</td>
+              <td class="cell-quantity" contenteditable="true">10箱</td>
+              <td contenteditable="true">72元一箱</td>
+              <td contenteditable="true">-</td>
+              <td><span class="cell-urgent urgent-normal">普通</span></td>
+              <td class="cell-missing">交期、到货地址</td>
+              <td class="cell-original">"能做到72元一箱，我今天就定"</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer" contenteditable="true">青禾社区团购</td>
+              <td class="cell-product" contenteditable="true">厨房湿巾</td>
+              <td contenteditable="true">80抽</td>
+              <td class="cell-quantity" contenteditable="true">-</td>
+              <td contenteditable="true">询问价格</td>
+              <td contenteditable="true">-</td>
+              <td><span class="cell-urgent urgent-normal">普通</span></td>
+              <td class="cell-missing">采购数量、期望单价、交期、到货地址</td>
+              <td class="cell-original">"顺便问下厨房湿巾80抽的多少钱？"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 2: Confirmation -->
+  <div class="tab-content" id="tab-confirm">
+    <div class="table-wrapper">
+      <div class="table-scroll">
+        <table class="confirm-table">
+          <thead>
+            <tr>
+              <th style="width:40px"></th>
+              <th>客户名称</th>
+              <th>问题所在</th>
+              <th>应该向客户追问什么</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer">暖家生活馆陈老板</td>
+              <td class="confirm-issue">折叠脏衣篮的单价缺失</td>
+              <td class="confirm-suggest" contenteditable="true">确认45L大号带盖米白色折叠脏衣篮100个的单价</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer">好日子家居刘姐</td>
+              <td class="confirm-issue">珊瑚绒地垫的单价缺失</td>
+              <td class="confirm-suggest" contenteditable="true">确认40×60灰色珊瑚绒地垫180张的单价，以及能否周五上午送达苏州仓</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="row-actions">
+                  <button class="row-action-btn delete" title="删除">×</button>
+                </div>
+              </td>
+              <td class="cell-customer">安居百货周姐</td>
+              <td class="confirm-issue">透明收纳箱的具体含税到货价缺失</td>
+              <td class="confirm-suggest" contenteditable="true">确认60L蓝色带轮款大号透明收纳箱80个的含税到货价，以及能否下周三前送达杭州</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer Toolbar -->
+<div class="footer-toolbar">
+  <div class="footer-info">
+    已编辑 <strong>0</strong> 处 · 最后保存：刚刚
+  </div>
+  <div class="footer-actions">
+    <button class="btn btn-outline">返回工作台</button>
+    <button class="btn btn-primary">导出 Excel</button>
+  </div>
+</div>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Track edits
+  let editCount = 0;
+  document.querySelectorAll('[contenteditable="true"]').forEach(cell => {
+    cell.addEventListener('input', () => {
+      editCount++;
+      document.querySelector('.footer-info strong').textContent = editCount;
+    });
+  });
+</script>
+
+</body>
+</html>

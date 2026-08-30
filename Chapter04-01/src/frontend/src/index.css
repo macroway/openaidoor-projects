@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-body-md text-ink antialiased;
+    background-color: #F7F8FA;
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply text-body-md font-semibold cursor-pointer inline-flex items-center justify-center transition-all duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-brand to-brand-dark text-white rounded-lg px-5 py-2.5 border-none hover:brightness-105 active:scale-[0.98];
+    box-shadow: 0 1px 2px rgba(45,212,168,0.2);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(45,212,168,0.3);
+  }
+  .btn-primary:disabled {
+    @apply bg-disabled cursor-not-allowed from-disabled to-disabled;
+    box-shadow: none;
+  }
+  .btn-outline {
+    @apply btn bg-white text-text-secondary rounded-lg px-5 py-2.5 border border-border hover:bg-surface-card hover:border-text-muted hover:text-ink active:scale-[0.98];
+  }
+
+  /* Icon Button */
+  .icon-btn {
+    @apply w-7 h-7 border-none bg-transparent text-disabled cursor-pointer rounded-md flex items-center justify-center text-body-md transition-all duration-200;
+  }
+  .icon-btn:hover {
+    @apply bg-danger-light text-danger scale-110;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white border border-border rounded-lg overflow-hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  /* Table base */
+  .table-base {
+    @apply w-full border-collapse text-body-md;
+  }
+  .table-th {
+    @apply bg-gradient-to-b from-surface-card to-white px-4 py-3.5 text-left font-bold text-text-heading text-body-sm border-b-2 border-border whitespace-nowrap;
+  }
+  .table-td {
+    @apply px-4 py-3.5 border-b border-border-light text-text-body align-top;
+  }
+  .table-row:hover .table-td {
+    @apply bg-surface-card/50;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-md text-caption font-semibold;
+  }
+  .badge-default {
+    @apply badge bg-surface-badge text-text-secondary;
+  }
+  .badge-warning {
+    @apply badge bg-warning-light text-warning;
+  }
+  .badge-danger {
+    @apply badge bg-danger-light text-danger-strong;
+  }
+  .badge-success {
+    @apply badge bg-success-light text-success;
+  }
+
+  /* Empty state */
+  .empty-state {
+    @apply text-center py-16 px-6 text-text-muted text-body-md;
+  }
+
+  /* Editable cell */
+  .editable-cell {
+    @apply cursor-text transition-all duration-200 rounded-sm;
+  }
+  .editable-cell:hover {
+    @apply bg-success-light;
+    box-shadow: inset 0 0 0 1px rgba(5, 150, 105, 0.2);
+  }
+  .editable-cell:focus {
+    @apply bg-success-light outline-none;
+    box-shadow: inset 0 0 0 2px rgba(5, 150, 105, 0.4);
+  }
+}

@@ -1,0 +1,16 @@
+Case,主题,章节,建议时长,主要输入,主要产物
+01-01,每天清晨自动推送工作任务清单,日常办公提效与跨部门协作,12–15 分钟,inputs/本周任务口述稿.txt；inputs/日历约束.md；inputs/期望推送样例.md,本周任务清单.md；今日任务清单；自动化任务配置
+01-02,管理多项目进度,日常办公提效与跨部门协作,20–25 分钟,inputs/project_01.xlsx … project_12.xlsx；inputs/项目状态口径.md,项目甘特图看板.html；风险项目清单.md
+02-01,批量分析客服工单反馈,数据分析与可视化,18–22 分钟,inputs/客户投诉工单_80条.csv；inputs/字段说明.md,客户投诉月度分析报告.md；工单归类明细.csv；投诉类型分布图
+02-02,搭建指标体系与看板,数据分析与可视化,25–30 分钟,inputs/产品迭代说明_v1.md；inputs/产品迭代说明_v2.md；inputs/APP历史数据.xlsx,指标体系.xlsx；数据看板.html；口径冲突清单.md
+03-01,拆解小红书爆款内容,内容创作与自媒体运营,15–20 分钟,inputs/爆款笔记样例.md；inputs/图片分镜说明.md；inputs/评论区样例.csv,五维拆解报告.md；变量替换表.md；发布前检查清单.md
+03-02,整理全网爆款选题,内容创作与自媒体运营,25–30 分钟,inputs/2026多平台趋势弹药库.md；inputs/对标内容样例.csv；inputs/品牌事实库.md,三平台选题矩阵.html；三平台同题改写.md；72小时排期.md
+04-01,整理展会公司数据,行业调研与竞品分析,25–35 分钟,inputs/mock_exhibitors_page.html；inputs/mock_exhibitors_api.json；inputs/相关性评分规则.md,展商相关性分析.xlsx；展商分析报告.html；抓取与评分说明.md
+04-02,管理展会商机线索,行业调研与竞品分析,30–35 分钟,inputs/展会复盘原始资料.xlsx；inputs/会议纪要.md；inputs/商机评级规则.md,客户去重与分类表.xlsx；商机跟进表.xlsx；展会ROI复盘报告.md；管理层看板.html
+05-01,整理多渠道用户反馈,产品设计与需求管理,22–28 分钟,inputs/飞书群反馈.txt；inputs/社区论坛反馈.md；inputs/用户访谈纪要.md；inputs/AppStore评论.csv；inputs/内部工单.csv,去重反馈表.csv；高优需求描述.md；本周反馈总结.md
+05-02,设计产品界面,产品设计与需求管理,25–30 分钟,inputs/设计方向简报.md；inputs/用户画像卡.md；inputs/课堂约束.md,产品规划.md；页面清单.md；核心页面原型
+06-01,优化简历岗位匹配度,个人求职与面试,20–25 分钟,inputs/原始简历_脱敏.md；inputs/JD_01.md … JD_05.md；inputs/可核实经历补充表.md,JD关键词地图.md；简历修改对照表.md；优化版简历.md；投递与跟进计划.md
+06-02,HR 快速筛选简历,个人求职与面试,20–25 分钟,inputs/候选人简历库_30人.xlsx；inputs/物业工程主管JD.md；inputs/筛选规则.md,候选人筛选结果.xlsx；人工复核清单.md
+07-01,快速整理学习笔记,知识管理与方法沉淀,20–25 分钟,inputs/原始文章_智能体评测入门.md；inputs/知识库目录.csv；inputs/归档规则.md,结构化学习笔记.md；知识卡片文案.md；更新后目录.csv；交付验证报告.md
+07-02,沉淀个人知识体系,知识管理与方法沉淀,25–30 分钟,inputs/研究问题.md；inputs/材料A_培训纪要.md；inputs/材料B_产品手册旧版.md；inputs/材料C_产品手册新版.md；inputs/材料D_行业观点.md,带来源知识笔记.md；事实观点待确认矩阵.csv；下一步阅读清单.md
+08-01,整理旅游攻略,业余生活与兴趣爱好,25–30 分钟,inputs/旅行需求.md；inputs/景点与交通演示数据.csv；inputs/餐饮住宿候选.md；inputs/照片占位与版权说明.md,青岛三日游.html；出发前复核清单.md
